@@ -4,8 +4,8 @@
 | Élément | Calcul | Résultat |
 |---|---|---|
 | Puissance utile V5 | 5 V × 1 A | 5 W |
-| Puissance utile V3V3 | 3,3 V × 0,5 A | 1,65 W |
-| Puissance utile totale | | 6,65 W |
+| Puissance utile V3V3 | 3,3 V × 0,37 A | 1,221 W |
+| Puissance utile totale | | 6,221 W |
 | Courant d'entrée max (à 18 V) | ≈ 8,6 W / 18 V | ≈ 0,5 A |
 
 Hypothèses de rendement (à remplacer par les fiches techniques) :
