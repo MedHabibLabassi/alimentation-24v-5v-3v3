@@ -142,5 +142,5 @@ le câble en cas d'inversion).
 ## 10. Historique des modifications
 | Version | Modifications |
 |---|---|
-| 0.1 | Version initiale (étape 2) |
+| 0.1 | Version initiale |
 | 0.2 | Courant d'entrée corrigé (0,43 A) ; rendement du buck 3,3 V à 93 % ; Vds du MOSFET passé à 60 V ; fusible retenu à la place du PTC ; condensateurs d'entrée 100 V ; tableau des composants et contraintes de placement ajoutés |
