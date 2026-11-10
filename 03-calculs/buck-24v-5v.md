@@ -78,7 +78,7 @@ Courant efficace : Irms,in = Iout × √(D × (1 − D))
 | 24 V | 0,57 A |
 | 32 V | 0,51 A |
 
-Choix : 2 × 4,7 µF, 50 V, X7R, au plus près du circuit.
+Choix : 2 × 4,7 µF, 100 V, X7R, au plus près du circuit.
 Capacité effective supposée à 24 V : 50 % → ≈ 5 µF au total.
 ΔVin = Iout × D × (1 − D) / (fsw × Cin) = 1,4 × 0,2006 / (500 000 × 5e-6)
      ≈ 0,11 V au pire cas (18 V)
