@@ -8,8 +8,8 @@ Conception complète d'une alimentation basse tension pour cartes industrielles,
 - Protections : inversion de polarité, surtension, court-circuit, surintensité
 
 ## Avancement
-- [ ] Spécification
-- [ ] Architecture
+- [x] Spécification
+- [x] Architecture
 - [ ] Calculs
 - [ ] Simulation
 - [ ] Schéma et PCB KiCad
