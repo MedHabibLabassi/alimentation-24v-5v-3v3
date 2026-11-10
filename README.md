@@ -10,7 +10,7 @@ Conception complète d'une alimentation basse tension pour cartes industrielles,
 ## Avancement
 - [x] Spécification
 - [x] Architecture
-- [ ] Calculs
+- [x] Calculs
 - [ ] Simulation
 - [ ] Schéma et PCB KiCad
 - [ ] Revue de conception et AMDEC
