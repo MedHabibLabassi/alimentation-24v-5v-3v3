@@ -1,0 +1,6 @@
+- Entrée 24 V nominal, fonctionnement de 18 à 32 V
+- Sorties : 5 V / 1 A et 3,3 V / 0,5 A
+- Ondulation de sortie visée : < 50 mV crête à crête
+- Température ambiante maximale : 60 °C
+- Protections : inversion de polarité, surtension, court-circuit, surintensité
+- Connecteurs et dimensions
