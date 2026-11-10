@@ -131,6 +131,7 @@ Les valeurs de θJA sont des hypothèses : à remplacer par celles des fiches.
 - Tension inverse : 60 V (la TVS écrête à environ 53 V lors d'une surtension)
 - Courant moyen : Iout × (1 − D) = 1,18 A au pire cas → boîtier 3 A
 - Schottky à faible fuite (la fuite augmente avec la température)
+- La TVS ne protège pas d’une surtension permanente
 
 ## 9. Points ouverts
 - Remplacer les hypothèses par les valeurs réelles des fiches techniques
