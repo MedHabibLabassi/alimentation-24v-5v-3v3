@@ -138,6 +138,7 @@ le câble en cas d'inversion).
   stabilité du buck 5 V avec le buck 3,3 V en charge, ringing du nœud SW
   pendant un surge
 - Remplacer toutes les hypothèses par les valeurs des fiches techniques
+- Pic d’appel de courant de 45 à 75 A : vérifier l’Idm du MOSFET (S8)
 
 ## 10. Historique des modifications
 | Version | Modifications |
