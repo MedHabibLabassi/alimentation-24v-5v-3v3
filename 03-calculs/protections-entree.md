@@ -106,21 +106,32 @@ protection active (comparateur et MOSFET de coupure) serait nécessaire pour
 tenir une surtension permanente : amélioration possible pour la V2.
 
 ## 5. Appel de courant à la mise sous tension
-Capacité totale vue par le câble : C ≈ 52 µF. Énergie : ½ × C × V² = 27 mJ à 32 V.
-Deux bornes pour le pic de courant :
-- Limité par le câble (L = 1 µH) : Z = √(L / C) ≈ 4,4 Ω → pic ≈ 32 / 4,4 ≈ 7 A,
-  durée ≈ π × √(L × C) ≈ 23 µs, I²t ≈ 5 × 10⁻⁴ A²s
-- Limité par la seule résistance série (R = 0,5 Ω, cas pessimiste) :
-  pic 64 A pendant ≈ 26 µs, I²t = V² × C / (2R) ≈ 0,05 A²s
+Capacité vue par le câble : ≈ 52 µF (≈ 5 µF de céramiques effectifs + 47 µF).
+Impédance caractéristique : Z0 = √(L / C) = √(1 µH / 52 µF) = 0,139 Ω.
+Sans résistance, le pic théorique serait 32 V / 0,139 Ω ≈ 230 A. En pratique,
+il est limité par les résistances de la boucle (fusible à froid 0,15 Ω, MOSFET,
+câble : ≈ 0,29 Ω au total) et par l'ESR de l'électrolytique.
 
-Conclusions :
-- I²t pessimiste = 0,05 A²s, soit 10 % de l'I²t de fusion supposé (0,5 A²s) : acceptable
-- Un branchement à chaud sans amortissement peut faire monter la tension
-  jusqu'à 2 × Vin. Le condensateur électrolytique de 47 µF (ESR élevée)
-  amortit ce phénomène, et la TVS écrête le reste
-- Le pic de courant traverse la diode interne du MOSFET : à comparer avec
-  son courant impulsionnel (Idm) dans la fiche. Si le pic dépasse Idm,
-  ajouter une résistance de 1 Ω en série ou choisir un MOSFET plus robuste
+Intégration numérique simplifiée (diode interne Vf = 0,7 V constante, TVS
+linéaire, sans impédance de source) :
+| Cas | Pic de courant | Pic de tension | I²t |
+|---|---|---|---|
+| Céramiques seules | ≈ 46 A | ≈ 41 V (écrêtée par la TVS) | ≈ 0,007 A²s |
+| + 47 µF, ESR 0,05 Ω | ≈ 74 A | ≈ 31 V | ≈ 0,077 A²s |
+| + 47 µF, ESR 0,3 Ω | ≈ 55 A | ≈ 31 V | ≈ 0,048 A²s |
+| + 47 µF, ESR 1 Ω | ≈ 48 A | ≈ 31 V | ≈ 0,026 A²s |
+| ESR 0,3 Ω + 1 Ω en série | ≈ 21 A | ≈ 31 V | ≈ 0,017 A²s |
+| ESR 0,3 Ω + 2,2 Ω en série | ≈ 12 A | ≈ 30 V | ≈ 0,009 A²s |
+
+Conséquences :
+- I²t maximal ≈ 0,08 A²s, soit ≈ 15 % de l'I²t de fusion supposé : fusible OK
+- Le courant traverse la diode interne du MOSFET jusqu'à la mise en
+  conduction du canal. Il faut comparer le pic (≈ 75 A, quelques dizaines
+  de µs) au courant impulsionnel de la diode interne dans la fiche technique
+- Options si ce n'est pas tenable : (a) MOSFET plus robuste ; (b) résistance de
+  1 Ω en série (perte 0,43² × 1 ≈ 0,18 W à 18 V, chute 0,43 V) ou NTC ;
+  (c) réduire la capacité d'entrée
+- Décision après la simulation S8 (étape 4)
 
 ## 6. Condensateurs d'entrée : changement de tension nominale
 Avec Vc = 53,3 V, les céramiques 50 V de la partie A sont dépassées. Nouveau choix :
